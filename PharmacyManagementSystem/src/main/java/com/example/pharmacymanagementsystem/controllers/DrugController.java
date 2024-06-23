@@ -144,16 +144,16 @@ public class DrugController implements Initializable {
     }
 
     @FXML
-    private void openAddWindow(ActionEvent event) {
+    private void openNewStage(MouseEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("C:/Users/hp spectre/Desktop/PharmMgtSystem-main/PharmacyManagementSystem/src/main/resources/com/example/pharmacymanagementsystem/add.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/pharmacymanagementsystem/add.fxml"));
             Parent root = fxmlLoader.load();
 
             Stage stage = new Stage();
-            stage.setTitle("Add New Drug"); // Set the title
+            stage.setTitle("Add New Drug");
             stage.setScene(new Scene(root));
             stage.show();
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
             // Handle any exceptions (e.g., if the FXML file is not found)
         }
